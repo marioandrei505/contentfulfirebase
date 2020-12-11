@@ -124,8 +124,9 @@
               <ul>
                 <li><a href="" data-nav>Products</a></li>
                 <li><a href="categories" data-nav>Categories</a></li>
-                <li><a href="about" data-nav>About</a></li>
+                <li><a href="about" data-nav>Articulos</a></li>
               </ul>
+              <input type="search" id="myInput" onsearch="buscale()" placeholder="Busca un producto">
               <!-- The surrounding HTML is left untouched by FirebaseUI.
                 Your app may use that space for branding, controls and other customizations.-->
               <div id="firebaseui-auth-container"></div>
@@ -159,10 +160,33 @@
     <script src="./pages/about.js" charset="utf-8"></script>
     <script>
       PC.init()
+        
+         function buscale() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  
+  filter = input.value;
+  console.log("buscando: "+filter);
+  
+ PC.contentfulClient.getEntries({
+  content_type: 'product',
+  'fields.productName[match]': filter
+})
+.then(function (entries) {
+     console.log(entries.items[0]);
+     console.log("esta es la url? "+entries.items[0].fields.slug);
+     window.location.replace("/product/"+entries.items[0].fields.slug);
+    //mejor manda pintar la lista echale un ojo a render products
+  })
+          
+  console.log("sale");
+
+    }       
     </script>
     <!--ANALYTICS-->
     
-   
+     
+
 
     
    
