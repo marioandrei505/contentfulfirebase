@@ -19,7 +19,8 @@ PC.init = function () {
   // IDs of some of the Content Types used in the app
   PC.config = {
     productContentTypeId: 'product',
-    categoryContentTypeId: 'category'
+    categoryContentTypeId: 'category',
+    articuloContentTypeId: 'articulo'
   }
 
   setupHistory()

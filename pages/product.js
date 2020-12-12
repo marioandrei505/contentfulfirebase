@@ -21,6 +21,7 @@ function renderSingleProduct(product) {
   return '<div class="product">' +
     '<div class="product-image">' +
       renderImage(fields.image[0]) +
+      //JSON.stringify(fields)+
     '</div>' +
     '<div class="product-header">' +
       '<h2>' + fields.productName + '</h2>' +

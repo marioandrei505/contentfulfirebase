@@ -27,7 +27,7 @@ PC.pages.products.renderHTML = function (params) {
 }
 
 function renderProducts(products) {
-  return '<h1>Products</h1>' +
+  return '<h1>Productsss</h1>' +
     '<div class="products">' +
     products.map(renderSingleProduct).join('\n') +
     '</div>'
