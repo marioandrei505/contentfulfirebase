@@ -31,7 +31,7 @@ PC.pages.about.renderHTML = function (params) {
 function renderSingleProduct(entry) {
   return '<div class="product">' +
             '<div class="product-image">' +
-              renderImage(entry.hero) +
+            '<img src="' + renderImage(entry.hero)  + '" width="300" height="300" />'
             '</div>' +
           '<div class="product-header">' +
             '<h2>' + entry.titulo + '</h2>' +
@@ -86,8 +86,8 @@ function renderSingleProduct(product) {
 
   const asset = PC.contentfulClient.getAsset(image.sys.id)
   .then((asset) => {
-    console.log("que vamos a pegar? "+'<img src="' + asset.fields.file.url + '" width="300" height="300" />')
-    return '<img src="' + asset.fields.file.url + '" width="300" height="300" />';
+    console.log("que vamos a mandar? "+ asset.fields.file.url )
+    return asset.fields.file.url ;
   })
 
 
