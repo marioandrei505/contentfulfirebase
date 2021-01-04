@@ -1,7 +1,7 @@
 (function () {
 
 PC.pages.about = {}
-
+var urlasset=''
 /**
  * Renders an article, to do all articles
  */
@@ -25,10 +25,10 @@ PC.pages.about.renderHTML = function (params) {
     const asset = PC.contentfulClient.getAsset(entry.hero.sys.id)
   .then((asset) => {
     console.log("que vamos a mandar? "+ asset.fields.file.url )
-    return asset.fields.file.url ;
+    urlasset = asset.fields.file.url ;
   })
 
-  console.log("asset trae: "+asset);
+  console.log("asset trae: "+urlasset);
 
 
 
@@ -42,7 +42,7 @@ PC.pages.about.renderHTML = function (params) {
 function renderSingleProduct(entry) {
   return '<div class="product">' +
             '<div class="product-image">' +
-            '<img src="' + asset + '" width="300" height="300" />'
+            '<img src="' + urlasset + '" width="300" height="300" />'
             '</div>' +
           '<div class="product-header">' +
             '<h2>' + entry.titulo + '</h2>' +
