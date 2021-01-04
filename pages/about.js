@@ -26,13 +26,11 @@ PC.pages.about.renderHTML = function (params) {
   .then((asset) => {
     console.log("que vamos a mandar? "+ asset.fields.file.url )
     urlasset = asset.fields.file.url ;
+    console.log("asset trae: "+urlasset);
+    return renderSingleProduct(entry)
   })
 
-  console.log("asset trae: "+urlasset);
-
-
-
-    return renderSingleProduct(entry)
+ 
     //document.getElementById('rich-text-body').innerHTML = renderedHtml;
   })
   .catch(error => console.log(error));
