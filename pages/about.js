@@ -42,9 +42,9 @@ function renderSingleProduct(product) {
     //'</p>' +
     '<p>' + marked(fields.descripcion) + '</p>' +
       '<div >' +
-      '<p>'+JSON.stringify(fields.contenido) + '</p>' +
-      '<p>'+JSON.stringify(fields.productosRelacionados) + '</p>' +
-      '<p>' + marked(fields.fecha) + '</p>' +
+      '<p>'+JSON.stringify(fields.contenido.content.conent.value) + '</p>' +
+      '<p>Productos relacionados: '+JSON.stringify(fields.productosRelacionados) + '</p>' +
+      '<p> Fecha de publicación: ' + marked(fields.fecha) + '</p>' +
       //JSON.stringify(fields.productosRelacionados) +
     '</div>' +
     //'<p>Size/Type/Color: ' + fields.sizetypecolor+ '</p>' +
