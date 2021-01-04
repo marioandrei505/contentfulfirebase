@@ -3,7 +3,7 @@
 PC.pages.about = {}
 
 /**
- * Renders the individual product page
+ * Renders an article, to do all articles
  */
 
 PC.pages.about.renderHTML = function (params) {
@@ -17,7 +17,7 @@ PC.pages.about.renderHTML = function (params) {
     return renderSingleProduct(entries.items[0])
   })*/
 
-
+/*
   return PC.contentfulClient
   .getEntry('6hLeTWLDy3felaFOjatheY')
   .then(entry => {
@@ -31,14 +31,26 @@ PC.pages.about.renderHTML = function (params) {
     //document.getElementById('rich-text-body').innerHTML = renderedHtml;
   })
   .catch(error => console.log(error));
+*/
+  return PC.contentfulClient
+  .getEntry('6hLeTWLDy3felaFOjatheY')
+  .then(entry => {
+    return entry.fields;
+  })
+  .then(entry => {
+    // do something with html, like write to a file
+    console.log(entry);
+    return renderSingleProduct(entry)
+    //document.getElementById('rich-text-body').innerHTML = renderedHtml;
+  })
+  .catch(error => console.log(error));
 
-    
 }
 
-function renderSingleProduct(product) {
+function renderSingleProduct(entry) {
   return '<div class="product">' +
     
-  product+
+  entry.titulo+
   '</div>'
     }
 
