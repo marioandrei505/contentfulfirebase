@@ -52,7 +52,7 @@ PC.pages.about.renderHTML = function (params) {
 function renderSingleProduct(entry) {
   return '<div class="product">' +
             '<div class="product-image">' +
-              'hero en construcción'+//renderImage(entry.hero) +
+              'hero en construcción '+renderImage(entry.hero) +
             '</div>' +
           '<div class="product-header">' +
             '<h2>' + entry.titulo + '</h2>' +
@@ -104,11 +104,21 @@ function renderSingleProduct(product) {
     }
 */
     function renderImage(image) {
+      /*
   if(image && image.fields.file) {
     return '<img src="' + image.fields.file.url + '" width="300" height="300" />'
   } else {
     return ''
-  }
+  }*/
+
+  return PC.contentfulClient
+  .getEntry(image.sys.id)
+  .then(entry => {
+    console.log("el objeto de la imagen completo");
+    console.log(entry);
+    return 'nada';
+  })
+
 }
 
 
