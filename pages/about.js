@@ -86,7 +86,7 @@ function renderSingleProduct(product) {
 
   const asset = PC.contentfulClient.getAsset(image.sys.id)
   .then((asset) => {
-    console.log("el objeto de la imagen completo "+asset.fields.file.url)
+    console.log("que vamos a pegar? "+'<img src="' + asset.fields.file.url + '" width="300" height="300" />')
     return '<img src="' + asset.fields.file.url + '" width="300" height="300" />';
   })
 
