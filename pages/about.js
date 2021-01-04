@@ -10,6 +10,46 @@ var superentry=''
 PC.pages.about.renderHTML = function (params) {
  
     
+  /*hazAlgo()
+  .then(resultado => hazAlgoMas(resultado))
+  .then(nuevoResultado => hazLaTerceraCosa(nuevoResultado))
+  .then(resultadoFinal => {
+    console.log(`Obtenido el resultado final: ${resultadoFinal}`);
+  })
+  .catch(falloCallback);*/
+
+  return PC.contentfulClient
+  .getEntry('6hLeTWLDy3felaFOjatheY')
+  .then(entry => {
+    console.log("el objeto completo");
+    console.log(entry);
+    return renderSingleProduct(entry.fields)
+  })
+  /*.then(entry => {
+    // do something with html, like write to a file
+    console.log(entry);
+    console.log("la imagen:");
+    console.log(entry.hero.sys.id);
+    superentry=entry;
+    const asset = PC.contentfulClient.getAsset(entry.hero.sys.id)
+  .then((asset) => {
+    console.log("que vamos a mandar? "+ asset.fields.file.url )
+    urlasset = asset.fields.file.url ;
+    console.log("asset trae: "+urlasset);
+    
+    
+  })
+  console.log("super entry esta vacio?:");
+    console.log(superentry);
+  return renderSingleProduct(superentry)
+  
+    //document.getElementById('rich-text-body').innerHTML = renderedHtml;
+  })*/
+  .catch(error => console.log(error));
+
+}
+
+/*
   return PC.contentfulClient
   .getEntry('6hLeTWLDy3felaFOjatheY')
   .then(entry => {
@@ -39,7 +79,7 @@ PC.pages.about.renderHTML = function (params) {
   })
   .catch(error => console.log(error));
 
-}
+}*/
 
 function renderSingleProduct(entry) {
   return '<div class="product">' +
