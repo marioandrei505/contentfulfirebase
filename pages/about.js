@@ -28,10 +28,11 @@ PC.pages.about.renderHTML = function (params) {
     console.log("que vamos a mandar? "+ asset.fields.file.url )
     urlasset = asset.fields.file.url ;
     console.log("asset trae: "+urlasset);
-    console.log("super entry esta vacio?:");
-    console.log(superentry);
+    
     
   })
+  console.log("super entry esta vacio?:");
+    console.log(superentry);
   return renderSingleProduct(superentry)
   
     //document.getElementById('rich-text-body').innerHTML = renderedHtml;
