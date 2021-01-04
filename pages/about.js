@@ -22,7 +22,7 @@ PC.pages.about.renderHTML = function (params) {
     console.log("la imagen:");
     console.log(entry.hero.sys.id);
 
-    const asset = PC.contentfulClient.getAsset(image.sys.id)
+    const asset = PC.contentfulClient.getAsset(entry.hero.sys.id)
   .then((asset) => {
     console.log("que vamos a mandar? "+ asset.fields.file.url )
     return asset.fields.file.url ;
