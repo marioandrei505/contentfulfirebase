@@ -35,6 +35,8 @@ PC.pages.about.renderHTML = function (params) {
   return PC.contentfulClient
   .getEntry('6hLeTWLDy3felaFOjatheY')
   .then(entry => {
+    console.log("el objeto completo");
+    console.log(entry);
     return entry.fields;
   })
   .then(entry => {
@@ -59,7 +61,8 @@ function renderSingleProduct(entry) {
           '<div class="product-header">' +
           documentToHtmlString(entry.contenido)+
           '</div>' +
-          
+          '<p>Productos relacionados: '+JSON.stringify(entry.productosRelacionados) + '</p>' +
+          '<p> Fecha de publicación: ' + marked(entry.fecha) + '</p>' +
 
           '</div>'
     }
