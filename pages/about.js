@@ -30,9 +30,9 @@ PC.pages.about.renderHTML = function (params) {
     console.log("asset trae: "+urlasset);
     console.log("super entry esta vacio?:");
     console.log(superentry);
-    return renderSingleProduct(superentry)
+    
   })
-
+  return renderSingleProduct(superentry)
   
     //document.getElementById('rich-text-body').innerHTML = renderedHtml;
   })
