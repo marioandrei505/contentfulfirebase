@@ -39,7 +39,7 @@ function renderCategoryList(categories) {
       var fields = category.fields
       return '<li>' +
         '<img src="' + fields.icon.fields.file.url + '" width="20" height="20" alt="' + fields.categoryDescription + '" title="' + fields.categoryDescription + '" />' +
-        'hola<a href="categories/' + category.sys.id + '" data-nav>' + fields.title + '</a>' +
+        '<a href="categories/' + category.sys.id + '" data-nav>' + fields.title + '</a>' +
         '</li>'
     }).join('\n')
 }

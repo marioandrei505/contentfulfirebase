@@ -42,10 +42,10 @@ function renderSingleProduct(product) {
     //'</p>' +
     '<p>' + marked(fields.descripcion) + '</p>' +
       '<div >' +
-      '<p>'+ marked(fields.contenido) + '</p>' +
+      '<p>'+JSON.stringify(fields.contenido) + '</p>' +
+      '<p>'+JSON.stringify(fields.productosRelacionados) + '</p>' +
       '<p>' + marked(fields.fecha) + '</p>' +
       //JSON.stringify(fields.productosRelacionados) +
-      //  JSON.stringify(fields.hero)+
     '</div>' +
     //'<p>Size/Type/Color: ' + fields.sizetypecolor+ '</p>' +
     //'<p>' + fields.quantity + ' in stock</p>' +
