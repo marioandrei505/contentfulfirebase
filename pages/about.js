@@ -42,6 +42,8 @@ PC.pages.about.renderHTML = function (params) {
   .then(entry => {
     // do something with html, like write to a file
     console.log(entry);
+    console.log("la imagen:");
+    console.log(entry.hero);
     return renderSingleProduct(entry)
     //document.getElementById('rich-text-body').innerHTML = renderedHtml;
   })
@@ -111,13 +113,13 @@ function renderSingleProduct(product) {
     return ''
   }*/
 
-  return PC.contentfulClient
-  .getEntry(image.sys.id)
-  .then(entry => {
-    console.log("el objeto de la imagen completo");
-    console.log(entry);
-    return 'nada';
+  const asset = PC.contentfulClient.getAsset(image.id)
+  .then((asset) => {
+    console.log("el objeto de la imagen completo "+asset.fields.file.url)
+    return asset.fields.file.url;
   })
+
+
 
 }
 
