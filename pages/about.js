@@ -21,6 +21,17 @@ PC.pages.about.renderHTML = function (params) {
     console.log(entry);
     console.log("la imagen:");
     console.log(entry.hero.sys.id);
+
+    const asset = PC.contentfulClient.getAsset(image.sys.id)
+  .then((asset) => {
+    console.log("que vamos a mandar? "+ asset.fields.file.url )
+    return asset.fields.file.url ;
+  })
+
+  console.log("asset trae: "+asset);
+
+
+
     return renderSingleProduct(entry)
     //document.getElementById('rich-text-body').innerHTML = renderedHtml;
   })
@@ -31,7 +42,7 @@ PC.pages.about.renderHTML = function (params) {
 function renderSingleProduct(entry) {
   return '<div class="product">' +
             '<div class="product-image">' +
-            '<img src="' + renderImage(entry.hero)  + '" width="300" height="300" />'
+            '<img src="' + asset + '" width="300" height="300" />'
             '</div>' +
           '<div class="product-header">' +
             '<h2>' + entry.titulo + '</h2>' +
@@ -82,6 +93,7 @@ function renderSingleProduct(product) {
   '</div>'
     }
 */
+/*
     function renderImage(image) {
 
   const asset = PC.contentfulClient.getAsset(image.sys.id)
@@ -92,7 +104,7 @@ function renderSingleProduct(product) {
 
 
 
-}
+}*/
 
 
 }());
