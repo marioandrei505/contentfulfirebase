@@ -54,7 +54,7 @@ PC.pages.about.renderHTML = function (params) {
 function renderSingleProduct(entry) {
   return '<div class="product">' +
             '<div class="product-image">' +
-              'hero en construcción '+renderImage(entry.hero) +
+              +renderImage(entry.hero) +
             '</div>' +
           '<div class="product-header">' +
             '<h2>' + entry.titulo + '</h2>' +
@@ -116,7 +116,7 @@ function renderSingleProduct(product) {
   const asset = PC.contentfulClient.getAsset(image.sys.id)
   .then((asset) => {
     console.log("el objeto de la imagen completo "+asset.fields.file.url)
-    return asset.fields.file.url;
+    return '<img src="' + asset.fields.file.url + '" width="300" height="300" />';
   })
 
 
