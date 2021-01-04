@@ -9,29 +9,6 @@ PC.pages.about = {}
 PC.pages.about.renderHTML = function (params) {
  
     
-    /*return PC.contentfulClient.getEntries({
-    content_type: PC.config.articuloContentTypeId,
-    'fields.titulo': '84 Porsche 911 \"Tardza\"'
-  })
-  .then(function (entries) {
-    return renderSingleProduct(entries.items[0])
-  })*/
-
-/*
-  return PC.contentfulClient
-  .getEntry('6hLeTWLDy3felaFOjatheY')
-  .then(entry => {
-    const rawRichTextField = entry.fields.contenido;
-    return documentToHtmlString(rawRichTextField);
-  })
-  .then(renderedHtml => {
-    // do something with html, like write to a file
-    console.log(renderedHtml);
-    return renderSingleProduct(renderedHtml)
-    //document.getElementById('rich-text-body').innerHTML = renderedHtml;
-  })
-  .catch(error => console.log(error));
-*/
   return PC.contentfulClient
   .getEntry('6hLeTWLDy3felaFOjatheY')
   .then(entry => {
@@ -54,7 +31,7 @@ PC.pages.about.renderHTML = function (params) {
 function renderSingleProduct(entry) {
   return '<div class="product">' +
             '<div class="product-image">' +
-              +renderImage(entry.hero) +
+              renderImage(entry.hero) +
             '</div>' +
           '<div class="product-header">' +
             '<h2>' + entry.titulo + '</h2>' +
@@ -106,12 +83,6 @@ function renderSingleProduct(product) {
     }
 */
     function renderImage(image) {
-      /*
-  if(image && image.fields.file) {
-    return '<img src="' + image.fields.file.url + '" width="300" height="300" />'
-  } else {
-    return ''
-  }*/
 
   const asset = PC.contentfulClient.getAsset(image.sys.id)
   .then((asset) => {
