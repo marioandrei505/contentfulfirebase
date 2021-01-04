@@ -21,7 +21,7 @@ PC.pages.about.renderHTML = function (params) {
   return PC.contentfulClient
   .getEntry('6hLeTWLDy3felaFOjatheY')
   .then(entry => {
-    const rawRichTextField = entry.fields.descipcion;
+    const rawRichTextField = entry.fields.contenido;
     return documentToHtmlString(rawRichTextField);
   })
   .then(renderedHtml => {
