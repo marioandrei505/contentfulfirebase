@@ -2,6 +2,7 @@
 
 PC.pages.about = {}
 var urlasset=''
+var superentry=''
 /**
  * Renders an article, to do all articles
  */
@@ -21,16 +22,16 @@ PC.pages.about.renderHTML = function (params) {
     console.log(entry);
     console.log("la imagen:");
     console.log(entry.hero.sys.id);
-
+    superentry=entry;
     const asset = PC.contentfulClient.getAsset(entry.hero.sys.id)
   .then((asset) => {
     console.log("que vamos a mandar? "+ asset.fields.file.url )
     urlasset = asset.fields.file.url ;
     console.log("asset trae: "+urlasset);
-    return renderSingleProduct(entry)
+    return renderSingleProduct(superentry)
   })
 
- 
+  
     //document.getElementById('rich-text-body').innerHTML = renderedHtml;
   })
   .catch(error => console.log(error));
