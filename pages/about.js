@@ -84,7 +84,7 @@ PC.pages.about.renderHTML = function (params) {
 function renderSingleProduct(entry) {
   return '<div class="product">' +
             '<div class="product-image">' +
-            '<img src="' + urlasset + '" width="300" height="300" />'
+            //'<img src="' + urlasset + '" width="300" height="300" />'
             '</div>' +
           '<div class="product-header">' +
             '<h2>' + entry.titulo + '</h2>' +
