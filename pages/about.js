@@ -42,8 +42,8 @@ function renderSingleProduct(product) {
     //'</p>' +
     '<p>' + marked(fields.descripcion) + '</p>' +
       '<div >' +
-      '<p>hola contenido' +'</p>' +
-      //'<p>' + marked(fields.fecha) + '</p>' +
+      '<p>'+ marked(fields.contenido) + '</p>' +
+      '<p>' + marked(fields.fecha) + '</p>' +
       //JSON.stringify(fields.productosRelacionados) +
       //  JSON.stringify(fields.hero)+
     '</div>' +
