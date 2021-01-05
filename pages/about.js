@@ -10,7 +10,7 @@ var superentry=''
 PC.pages.about.renderHTML = function (params) {
 
 
-  hazAlgo().then(exitoCallback, falloCallback);
+  const promesa2 = hazAlgo().then(exitoCallback, falloCallback);
 
 
     /*
@@ -61,7 +61,7 @@ function hazAlgo() {
   .then((entry) => {
     console.log("el id de la imagen es: "+entry.fields.hero.sys.id);
     asset = PC.contentfulClient.getAsset(entry.fields.hero.sys.id)
-    .then(entry => {
+    .then(asset => {
       console.log("que vamos a mandar?:");
       console.log(asset.fields.file.url);
       urlasset = asset.fields.file.url;
