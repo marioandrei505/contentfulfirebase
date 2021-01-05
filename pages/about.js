@@ -18,13 +18,10 @@ PC.pages.about.renderHTML = function (params) {
   })
   .then(() => {
     console.log("el id de la imagen es: "+superentry.fields.hero.sys.id);
-    PC.contentfulClient.getAsset(superentry.fields.hero.sys.id)
-    .then((asset) => {
-      console.log("que vamos a mandar?:");
-      console.log(asset.fields.file.url);
-      urlasset = asset.fields.file.url;
-    })
-    .catch(e => {console.log("algo fallo con la imagen"+e)}) // Ignorar si hacerAlgoOpcional falla.
+    asset = PC.contentfulClient.getAsset(superentry.fields.hero.sys.id);
+    console.log("que vamos a mandar?:");
+    console.log(asset.fields.file.url);
+    urlasset = asset.fields.file.url;
   })
   .then(() => {
     console.log("superentry fields aca");
