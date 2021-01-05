@@ -10,7 +10,7 @@ var superentry=''
 PC.pages.about.renderHTML = function (params) {
 
 
-  const promesa2 = hazAlgo().then(exitoCallback, falloCallback);
+  const promesa2 = hazAlgo().then(exitoCallback(exito), falloCallback(error));
 
 
     /*
