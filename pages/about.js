@@ -10,20 +10,26 @@ var superentry=''
 PC.pages.about.renderHTML = function (params) {
  
     
-  /*hazAlgo()
-  .then(resultado => hazAlgoMas(resultado))
-  .then(nuevoResultado => hazLaTerceraCosa(nuevoResultado))
-  .then(resultadoFinal => {
-    console.log(`Obtenido el resultado final: ${resultadoFinal}`);
-  })
-  .catch(falloCallback);*/
+  /*hacerAlgoCritico()
+.then(resultado => hacerAlgoOpcional()
+  .then(resultadoOpcional => hacerAlgoSuper(resultadoOpcional))
+  .catch(e => {})) // Ignorar si hacerAlgoOpcional falla.
+.then(() => masAsuntosCriticos())
+.catch(e => console.log("Acción crítica fallida: " + e.message));*/
 
   return PC.contentfulClient
   .getEntry('6hLeTWLDy3felaFOjatheY')
   .then(entry => {
     console.log("el objeto completo");
     console.log(entry);
-    return renderSingleProduct(entry.fields)
+    superentry = entry;
+    console.log("superentry");
+    console.log(superentry);
+  })
+  .then(() => {
+    console.log("superentry aca");
+    console.log(superentry);
+    return renderSingleProduct(superentry);
   })
   /*.then(entry => {
     // do something with html, like write to a file
@@ -80,6 +86,8 @@ PC.pages.about.renderHTML = function (params) {
   .catch(error => console.log(error));
 
 }*/
+
+
 
 function renderSingleProduct(entry) {
   return '<div class="product">' +
