@@ -20,11 +20,10 @@ PC.pages.about.renderHTML = function (params) {
   return PC.contentfulClient
   .getEntry('6hLeTWLDy3felaFOjatheY')
   .then(entry => {
-    console.log("el objeto completo");
-    console.log(entry);
     superentry = entry;
-    console.log("superentry");
-    console.log(superentry);
+    var asset = PC.contentfulClient.getAsset(entry.hero.sys.id)
+    console.log("que vamos a mandar? "+ asset.fields.file.url )
+    urlasset = asset.fields.file.url ;
   })
   .then(() => {
     console.log("superentry fields aca");
@@ -92,7 +91,7 @@ PC.pages.about.renderHTML = function (params) {
 function renderSingleProduct(entry) {
   return '<div class="product">' +
             '<div class="product-image">' +
-            //'<img src="' + urlasset + '" width="300" height="300" />'
+            '<img src="' + urlasset + '" width="300" height="300" />'
             '</div>' +
           '<div class="product-header">' +
             '<h2>' + entry.titulo + '</h2>' +
