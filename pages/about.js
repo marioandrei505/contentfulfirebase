@@ -14,20 +14,24 @@ PC.pages.about.renderHTML = function (params) {
   .getEntry('6hLeTWLDy3felaFOjatheY')
   .then(entry => {
     superentry = entry;
-    console.log("el id de la imagen es: "+entry.fields.hero.sys.id);
-    PC.contentfulClient.getAsset(entry.fields.hero.sys.id)
+    
+  })
+  .then(() => {
+    console.log("el id de la imagen es: "+superentry.fields.hero.sys.id);
+    PC.contentfulClient.getAsset(superentry.fields.hero.sys.id)
     .then((asset) => {
       console.log("que vamos a mandar?:");
       console.log(asset.fields.file.url);
       urlasset = asset.fields.file.url;
     })
-    .then(() => {
-      console.log("superentry fields aca");
-      console.log(superentry.fields);
-      return renderSingleProduct(superentry.fields);
-    })
     .catch(e => {console.log("algo fallo con la imagen"+e)}) // Ignorar si hacerAlgoOpcional falla.
   })
+  .then(() => {
+    console.log("superentry fields aca");
+    console.log(superentry.fields);
+    return renderSingleProduct(superentry.fields);
+  })
+
   .catch(error => console.log(error));
 
 }
