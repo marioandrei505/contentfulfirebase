@@ -27,9 +27,9 @@ PC.pages.about.renderHTML = function (params) {
     console.log(superentry);
   })
   .then(() => {
-    console.log("superentry aca");
-    console.log(superentry);
-    return renderSingleProduct(superentry);
+    console.log("superentry fields aca");
+    console.log(superentry.fields);
+    return renderSingleProduct(superentry.fields);
   })
   /*.then(entry => {
     // do something with html, like write to a file
