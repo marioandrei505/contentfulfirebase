@@ -22,7 +22,9 @@ PC.pages.about.renderHTML = function (params) {
   .then(entry => {
     superentry = entry;
     var asset = PC.contentfulClient.getAsset(entry.fields.hero.sys.id)
-    console.log("que vamos a mandar? "+ asset.fields.file.url )
+    console.log("el id es: "+entry.fields.hero.sys.id);
+    console.log("que vamos a mandar?:");
+    console.log(asset.fields);
     urlasset = asset.fields.file.url ;
   })
   .then(() => {
