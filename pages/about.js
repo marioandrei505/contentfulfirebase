@@ -21,7 +21,7 @@ PC.pages.about.renderHTML = function (params) {
   .getEntry('6hLeTWLDy3felaFOjatheY')
   .then(entry => {
     superentry = entry;
-    var asset = PC.contentfulClient.getAsset(entry.hero.sys.id)
+    var asset = PC.contentfulClient.getAsset(entry.fields.hero.sys.id)
     console.log("que vamos a mandar? "+ asset.fields.file.url )
     urlasset = asset.fields.file.url ;
   })
