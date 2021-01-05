@@ -10,8 +10,7 @@ var superentry=''
 PC.pages.about.renderHTML = function (params) {
 
 
-  const promesa = hazAlgo();
-  const promesa2 = promesa.then(exitoCallback, falloCallback);
+  let promesa2 = hazAlgo().then(exitoCallback, falloCallback);
 
 
     /*
@@ -43,7 +42,7 @@ function exitoCallback(resultado) {
   console.log("superentry fields aca");
     console.log(superentry.fields);
     return renderSingleProduct(superentry.fields);
-    
+
 }
 
 function falloCallback(error) {
@@ -56,6 +55,13 @@ function hazAlgo() {
   .then(entry => {
     superentry = entry;
     console.log("saliendo de haz algo");
+  })
+  .then(() => {
+    console.log("el id de la imagen es: "+superentry.fields.hero.sys.id);
+    asset = PC.contentfulClient.getAsset(superentry.fields.hero.sys.id);
+    console.log("que vamos a mandar?:");
+    console.log(asset.fields.file.url);
+    urlasset = asset.fields.file.url;
   })
   .catch(error => console.log(error));
 }
