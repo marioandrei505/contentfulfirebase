@@ -60,10 +60,15 @@ function hazAlgo() {
   })
   .then((entry) => {
     console.log("el id de la imagen es: "+entry.fields.hero.sys.id);
-    asset = PC.contentfulClient.getAsset(entry.fields.hero.sys.id);
-    console.log("que vamos a mandar?:");
-    console.log(asset.fields.file.url);
-    urlasset = asset.fields.file.url;
+    asset = PC.contentfulClient.getAsset(entry.fields.hero.sys.id)
+    .then(entry => {
+      console.log("que vamos a mandar?:");
+      console.log(asset.fields.file.url);
+      urlasset = asset.fields.file.url;
+      return urlasset;
+    })
+    .catch(error => console.log(error));
+    
     return urlasset;
   })
   .catch(error => console.log(error));
