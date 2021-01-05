@@ -19,14 +19,14 @@ PC.pages.about.renderHTML = function (params) {
 
   return PC.contentfulClient
   .getEntry('6hLeTWLDy3felaFOjatheY')
-  .then(entry => {
-    superentry = entry;
-    var asset = PC.contentfulClient.getAsset(entry.fields.hero.sys.id)
+  .then(entry => {superentry = entry;})
+  .then((entry) => { var asset = PC.contentfulClient.getAsset(entry.fields.hero.sys.id)
     console.log("el id es: "+entry.fields.hero.sys.id);
     console.log("que vamos a mandar?:");
     console.log(asset.fields);
-    urlasset = asset.fields.file.url ;
-  })
+    urlasset = asset.fields.file.url ;})
+  .catch(e => {console.log("algo fallo"+error)}) // Ignorar si hacerAlgoOpcional falla.
+  
   .then(() => {
     console.log("superentry fields aca");
     console.log(superentry.fields);
