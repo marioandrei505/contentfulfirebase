@@ -27,6 +27,8 @@
   }
   
   function renderProducts(products) {
+    console.log(products);
+    JSON.stringify(products);
     return '<h1>Productsss</h1>' +
       '<div class="products">' +
       products.map(renderSingleProduct).join('\n') +
