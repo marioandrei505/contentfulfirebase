@@ -39,7 +39,7 @@
     var fields = product.fields
     return '<div class="product-in-list">' +
       '<div class="product-image">' +
-        renderImage(fields.image[0], fields.slug) +
+        renderImage(fields.hero[0], fields.slug) +
       '</div>' +
       '<div class="product-details">' +
         renderProductDetails(fields) +
@@ -63,11 +63,11 @@
     return '<div class="product-header">' +
       '<h2>' +
         '<a href="product/' + fields.slug + '" data-nav>' +
-          fields.productName +
+          fields.titulo +
         '</a>'+
       '</h2>' +
       ' by ' +
-      '<a href="brand/' + fields.brand.sys.id + '" data-nav>' + fields.brand.fields.companyName + '</a>' +
+      //'<a href="brand/' + fields.brand.sys.id + '" data-nav>' + fields.brand.fields.companyName + '</a>' +
     '</div>'
   }
   
