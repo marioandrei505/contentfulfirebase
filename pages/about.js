@@ -39,7 +39,7 @@
     var fields = product.fields
     return '<div class="product-in-list">' +
       '<div class="product-image">' +
-        renderImage(fields.hero[0], fields.slug) +
+        renderImage(fields.hero, fields.slug) +
       '</div>' +
       '<div class="product-details">' +
         renderProductDetails(fields) +
@@ -54,8 +54,11 @@
         return category.fields.title
       }).join(', ') +
       '</p>' +
-      marked(fields.contenido) +
-      '<p>Fecha de publicación:' + fields.fecha + '</p>' 
+   
+      '<p>Productos relacionados: '+JSON.stringify(fields.contenido) + '</p>' +
+      documentToHtmlString(fields.contenido)+
+
+      '<p>Fecha de publicación:' + marked(fields.fecha) + '</p>' 
       //'<p class="product-tags"><span>Tags:</span> ' + fields.tags.join(', ')+ '</p>'
   }
   
