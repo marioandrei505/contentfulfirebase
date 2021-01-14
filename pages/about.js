@@ -53,9 +53,9 @@
       fields.categories.map(function (category) {
         return category.fields.title
       }).join(', ') +
-      '</p>' 
-      //PC.utils.truncate(marked(fields.productDescription), 100) +
-      //'<p>' + fields.price + ' &euro;</p>' +
+      '</p>' +
+      marked(fields.contenido) +
+      '<p>Fecha de publicación:' + fields.fecha + '</p>' 
       //'<p class="product-tags"><span>Tags:</span> ' + fields.tags.join(', ')+ '</p>'
   }
   
@@ -72,6 +72,10 @@
   }
   
   function renderImage(image, slug) {
+    console.log(image);
+    JSON.stringify(image);
+    console.log(slug);
+    JSON.stringify(slug);
     if(image && image.fields.file) {
       return '<a href="product/' + slug + '" data-nav>' +
         '<img src="' + image.fields.file.url + '" width="150" height="150" />' +
