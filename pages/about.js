@@ -55,8 +55,8 @@
       '</p>' +
    
       '<p>Contenido: </p>' +
-      fields.contenido.map(function (elemento) {
-        return elemento.content
+      fields.contenido.content.map(function (elemento) {
+        return elemento.nodeType
       }).join(', ') +
       //documentToHtmlString(fields.contenido)+
 
