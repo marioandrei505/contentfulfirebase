@@ -60,9 +60,9 @@
       fields.contenido.content.forEach(
         function(currentValue, currentIndex, listObj) {
           console.log(currentValue + ', ' + currentIndex + ', ' + this);
-        },
-        'miEsteArg'
-      );
+          return documentToHtmlString(currentValue)
+        }).join(', ') +
+        '</p>' +
       //documentToHtmlString(fields.contenido)+
 
       '<p>Fecha de publicación:' + marked(fields.fecha) + '</p>' +
