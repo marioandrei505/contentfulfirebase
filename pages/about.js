@@ -57,13 +57,13 @@
       '</p>' +
    
       '<p>Contenido: </p>' +
-      fields.contenido.content.forEach(
-        function(currentValue, currentIndex, listObj) {
-          console.log(currentValue + ', ' + currentIndex + ', ' + this);
-          return documentToHtmlString(currentValue)
-        }).join(', ') +
-        '</p>' +
-      //documentToHtmlString(fields.contenido)+
+      // fields.contenido.content.forEach(
+      //   function(currentValue, currentIndex, listObj) {
+      //     console.log(currentValue + ', ' + currentIndex + ', ' + this);
+      //   },
+      //   'miEsteArg'
+      // );
+      documentToHtmlString(fields.contenido)+
 
       '<p>Fecha de publicación:' + marked(fields.fecha) + '</p>' +
       '<p>Productos relacionados:' + documentToHtmlString(fields.productosRelacionados) + '</p>' 
