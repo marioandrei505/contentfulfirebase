@@ -65,8 +65,8 @@
       // );
       documentToHtmlString(fields.contenido)+
 
-      '<p>Fecha de publicación:' + marked(fields.fecha) + '</p>' +
-      '<p>Productos relacionados:' + documentToHtmlString(fields.productosRelacionados) + '</p>' 
+      '<p>Fecha de publicación:' + marked(fields.fecha) + '</p>' 
+      //'<p>Productos relacionados:' + documentToHtmlString(fields.productosRelacionados) + '</p>' 
   }
   
   function renderProductHeader(fields) {
