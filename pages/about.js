@@ -57,7 +57,7 @@
       '</p>' +
    
       '<p>Contenido: </p>' +
-      fields.contenido.forEach(
+      fields.contenido.content.forEach(
         function(currentValue, currentIndex, listObj) {
           console.log(currentValue + ', ' + currentIndex + ', ' + this);
         },
