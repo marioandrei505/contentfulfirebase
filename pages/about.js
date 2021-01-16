@@ -57,9 +57,12 @@
       '</p>' +
    
       '<p>Contenido: </p>' +
-      fields.contenido.map(function (elemento) {
-        return elemento.nodeType
-      }).join(', ') +
+      fields.contenido.childNodes.forEach(
+        function(currentValue, currentIndex, listObj) {
+          console.log(currentValue + ', ' + currentIndex + ', ' + this);
+        },
+        'miEsteArg'
+      );
       //documentToHtmlString(fields.contenido)+
 
       '<p>Fecha de publicación:' + marked(fields.fecha) + '</p>' +
