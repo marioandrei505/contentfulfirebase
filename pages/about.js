@@ -47,6 +47,8 @@
   }
   
   function renderProductDetails(fields) {
+    console.log("fields.contenido trae: ");
+    console.log(fields.contenido);
     return renderProductHeader(fields) +
       '<p class="product-categories">' +
       fields.categories.map(function (category) {
@@ -55,7 +57,7 @@
       '</p>' +
    
       '<p>Contenido: </p>' +
-      fields.contenido.content.map(function (elemento) {
+      fields.contenido.map(function (elemento) {
         return elemento.nodeType
       }).join(', ') +
       //documentToHtmlString(fields.contenido)+
