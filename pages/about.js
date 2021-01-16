@@ -55,11 +55,11 @@
       }).join(', ') +
       '</p>' +
    
-      '<p>Productos relacionados: '+JSON.stringify(fields.contenido) + '</p>' +
-      documentToHtmlString(fields.contenido)+
+      '<p>Contenido: '+fields.contenido[0] + '</p>' +
+      //documentToHtmlString(fields.contenido)+
 
       '<p>Fecha de publicación:' + marked(fields.fecha) + '</p>' 
-      //'<p class="product-tags"><span>Tags:</span> ' + fields.tags.join(', ')+ '</p>'
+      '<p>Productos relacionados:' + documentToHtmlString(fields.productosRelacionados) + '</p>' 
   }
   
   function renderProductHeader(fields) {
