@@ -28,8 +28,7 @@
   
   function renderProducts(products) {
     console.log(products);
-    JSON.stringify(products);
-    return '<h1>Productsss</h1>' +
+    return '<h1>Products</h1>' +
       '<div class="products">' +
       products.map(renderSingleProduct).join('\n') +
       '</div>'
@@ -55,10 +54,13 @@
       }).join(', ') +
       '</p>' +
    
-      '<p>Contenido: '+fields.contenido[0] + '</p>' +
+      '<p>Contenido: </p>' +
+      fields.contenido.map(function (elemento) {
+        return elemento.content
+      }).join(', ') +
       //documentToHtmlString(fields.contenido)+
 
-      '<p>Fecha de publicación:' + marked(fields.fecha) + '</p>' 
+      '<p>Fecha de publicación:' + marked(fields.fecha) + '</p>' +
       '<p>Productos relacionados:' + documentToHtmlString(fields.productosRelacionados) + '</p>' 
   }
   
@@ -75,10 +77,6 @@
   }
   
   function renderImage(image, slug) {
-    console.log(image);
-    JSON.stringify(image);
-    console.log(slug);
-    JSON.stringify(slug);
     if(image && image.fields.file) {
       return '<a href="product/' + slug + '" data-nav>' +
         '<img src="' + image.fields.file.url + '" width="150" height="150" />' +
